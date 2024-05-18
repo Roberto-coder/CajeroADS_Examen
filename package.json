@@ -1,0 +1,26 @@
+{
+  "name": "cajeroads_examen",
+  "version": "1.0.0",
+  "description": "Análisis, diseño e implementación de un sistema de software que le de soporte a una serie de operaciones bancarias en un cajero automático",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roberto-coder/CajeroADS_Examen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Roberto-coder/CajeroADS_Examen/issues"
+  },
+  "homepage": "https://github.com/Roberto-coder/CajeroADS_Examen#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pug": "^3.0.2"
+  }
+}
