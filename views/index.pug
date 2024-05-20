@@ -1,6 +1,15 @@
-doctype html
-html
-  head
-    title= tittle
-  body
-    h1= message
+extends layout
+
+block content
+  .row.justify-content-center
+    .col-md-6
+      .card
+        .card-body
+          h3.text-center Saldo Actual
+          p.display-4.text-center $#{balance}
+
+          .mt-4
+            .btn-group-vertical.btn-group-lg.d-flex
+              a.btn.btn-danger.flex-fill.mb-2(href='/deposit') Depositar Dinero
+              a.btn.btn-danger.flex-fill.mb-2(href='/withdraw') Retirar Dinero
+              a.btn.btn-danger.flex-fill(href='/transactions') Ver Transacciones

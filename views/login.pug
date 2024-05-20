@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title Maze Bank - GTA 5
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/style.css')
+  body
+    .container
+      header.text-center.mt-5
+        h1 Maze Bank
+        p Bienvenido a Maze Bank. Por favor, inicie sesión para acceder a su cuenta.
+
+      main.mt-4
+        .row.justify-content-center
+          .col-md-6
+            .card
+              .card-body
+                form(action='/login' method='post')
+                  .form-group
+                    label(for='username') Nombre de Usuario
+                    input.form-control(type='text' id='username' name='username' required)
+                  .form-group
+                    label(for='password') Contraseña
+                    input.form-control(type='password' id='password' name='password' required)
+                  .form-group
+                    button.btn.btn-danger.btn-block(type='submit') Iniciar Sesión
+                p.mt-3.text-center ¿No tienes una cuenta? 
+                  a(href='/register') Regístrate aquí
+
+      footer.text-center.mt-5
+        p &copy; 2024 Maze Bank. Todos los derechos reservados.
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')

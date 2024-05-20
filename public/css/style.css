@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header .user-info p {
+  margin: 0;
+}
+
+header .user-info {
+  text-align: right;
+}
+
+.card-body h3 {
+  color: #333;
+}
+
+.display-4 {
+  color: #28a745; /* Green color for balance */
+}
+
+.btn-danger {
+  background-color: #b22222;
+  border-color: #b22222;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}

@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 
 import indexruta from "./rutas/index-ruta.js";
+import loginruta from "./rutas/login-ruta.js";
 
 const __dirname = (process.platform === "win32")
         ? path.resolve()
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Definir más rutas y controladores según sea necesario...
 app.use('/', indexruta);
+app.use('/', loginruta);
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
