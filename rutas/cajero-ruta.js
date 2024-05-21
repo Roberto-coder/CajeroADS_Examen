@@ -1,4 +1,5 @@
 import  express  from "express";
+import transaccionControllers from '../controllers/transaccionControllers.js';
 
 const router = express.Router();
 
@@ -26,8 +27,6 @@ router.get('/transferir', (req, res) =>{
     res.render('transferir');
 });
 
-router.get('/transacciones', (req, res) =>{
-    res.render('transacciones');
-});
+router.get('/transacciones',transaccionControllers.mostrarTransacciones);
 export default router;
 
