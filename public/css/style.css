@@ -35,3 +35,60 @@ footer {
   color: white;
   padding: 10px 0;
 }
+
+/** aquí empieza el form **/
+.form-container {
+  max-width: 800px; /* Aumenta el ancho para acomodar dos columnas */
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-column {
+  width: 48%; /* Asegúrate de que las dos columnas ocupen menos del 100% del contenedor */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a00c2c;
+}
