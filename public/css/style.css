@@ -4,6 +4,7 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
+  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=58443'), auto; /* Ruta de la imagen del cursor */
 }
 
 .container {
