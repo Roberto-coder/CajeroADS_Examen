@@ -1,12 +1,22 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-image: url('../imagenes/fondo.jpg');
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
 }
 
+.container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 50px;
+}
+
 header .logo img {
-  height: 50px;
+  height: 100px;
+  width: 300px;
 }
 
 header .user-info p {
