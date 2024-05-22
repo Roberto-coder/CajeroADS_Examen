@@ -1,12 +1,35 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-image: url('../imagenes/fondo.jpg');
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
+  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=58443'), auto; /* Ruta de la imagen del cursor */
+}
+
+.container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.header-container {
+  background-color: #b22222; /* Color rojo */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.header-container p {
+  color: white;
+  margin: 0;
 }
 
 header .logo img {
-  height: 50px;
+  height: 100px;
+  width: 300px;
 }
 
 header .user-info p {
@@ -26,7 +49,7 @@ header .user-info {
 }
 
 .btn-danger {
-  background-color: #b22222;
+  background: linear-gradient(to top, #a00c2c rgb(251, 90, 90));
   border-color: #b22222;
 }
 
@@ -91,6 +114,10 @@ button {
 
 button:hover {
   background-color: #a00c2c;
+}
+
+.bg-light-red {
+  background-color: #ffcccc; /* Cambia el valor hexadecimal según tu preferencia */
 }
 
 /*PAGO DE SERVICIOS*/

@@ -17,17 +17,15 @@ html
           .col-md-6
             .card
               .card-body
-                form(action='/login' method='post')
+                form(action='/signin' method='post')
                   .form-group
                     label(for='username') Nombre de Usuario
-                    input.form-control(type='text' id='username' name='username' required)
+                    input.form-control(type='text' id='username' name='tarjeta' required)
                   .form-group
                     label(for='password') Contraseña
-                    input.form-control(type='password' id='password' name='password' required)
+                    input.form-control(type='password' id='password' name='clave' required)
                   .form-group
-                    button.btn.btn-danger.btn-block(type='submit') Iniciar Sesión
-                p.mt-3.text-center ¿No tienes una cuenta? 
-                  a(href='/register') Regístrate aquí
+                    button.btn.btn-danger.btn-block(type='submit') Iniciar Sesión 
 
       footer.text-center.mt-5
         p &copy; 2024 Maze Bank. Todos los derechos reservados.

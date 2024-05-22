@@ -3,16 +3,17 @@ extends layout
 block content
   .row.justify-content-center
     .col-md-6
+      if(error_msg)
+        h3.text-center(style="color: red") #{error_msg}
       .card
         .card-body
           h3.text-center Saldo Actual
-          p.display-4.text-center $#{balance}
-
+          p.display-4.text-center $#{user.saldo}
+          h3.text-center Saldo Pendiente
+          p.display-4.text-center $
           .mt-4
             .btn-group-vertical.btn-group-lg.d-flex
               a.btn.btn-danger.flex-fill.mb-2(href='/depositar') Depositar Dinero
               a.btn.btn-danger.flex-fill.mb-2(href='/retirar') Retirar Dinero
               a.btn.btn-danger.flex-fill.mb-2(href='/transferir') Transferir
-              a.btn.btn-danger.flex-fill.mb-2(href='/pagar') Pagar servicio
               a.btn.btn-danger.flex-fill(href='/transacciones') Ver Transacciones
-              

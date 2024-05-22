@@ -8,41 +8,22 @@ block content
       .form-row
         .form-column
           .form-group
-            label(for="id") ID:
-            input(type="text" name="id" id="id")
-          .form-group
-            label(for="nombre") Nombre:
-            input(type="text" name="nombre" id="nombre")
-          .form-group
             label(for="paterno") Apellido Paterno:
             input(type="text" name="paterno" id="paterno")
           .form-group
             label(for="materno") Apellido Materno:
             input(type="text" name="materno" id="materno")
-          .form-group
-            label(for="fechaNacimiento") Fecha de Nacimiento:
-            input(type="date" name="fechaNacimiento" id="fechaNacimiento")
-          .form-group
-            label(for="cuenta") Cuenta:
-            input(type="text" name="cuenta" id="cuenta")
         .form-column
           .form-group
-            label(for="CLABE") CLABE:
-            input(type="text" name="CLABE" id="CLABE")
+            label(for="nombre") Nombre:
+            input(type="text" name="nombre" id="nombre")
           .form-group
-            label(for="idDebito") ID Débito:
-            input(type="text" name="idDebito" id="idDebito")
+            label(for="cuenta") Número de Cuenta:
+            input(type="text" name="cuenta" id="cuenta")
+      .form-row
+        .form-column
           .form-group
-            label(for="celular") Celular:
+            label(for="celular") Teléfono:
             input(type="text" name="celular" id="celular")
-          .form-group
-            label(for="fecha") Fecha:
-            input(type="date" name="fecha" id="fecha")
-          .form-group
-            label(for="idCredito") ID Crédito:
-            input(type="text" name="idCredito" id="idCredito")
-          .form-group
-            label(for="SPEI") SPEI:
-            input(type="text" name="SPEI" id="SPEI")
       .form-group
-        button(type="submit") Enviar
+        button.btn.btn-danger.btn-block(type="submit") Enviar
