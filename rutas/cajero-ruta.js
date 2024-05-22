@@ -135,7 +135,7 @@ router.get('/retirar', (req, res) => {
 router.get('/transacciones', (req, res) => {
     const idCliente = req.user.id;
 
-    pool.query('SELECT * FROM transaccion WHERE idCliente = ?;', [idCliente], (error, results) => {
+    pool.query('SELECT * FROM transaccion WHERE idCliente = ? ORDER BY fecha DESC LIMIT 16;', [idCliente], (error, results) => {
         if (error) {
             console.error('Error al obtener los datos:', error);
             return res.status(500).send('Error interno del servidor');
