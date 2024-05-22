@@ -2,7 +2,7 @@ import express, { request } from "express";
 import pool from '../config/database.js';
 const router = express.Router();
 
-router.get('/pagar', (req, res) => {
+router.get('/pagar',loginControllers.ensureAuthenticated, (req, res) => {
     res.render('servicios',{ user: req.user });
 });
 
@@ -11,7 +11,7 @@ router.post('/pagar', (req, res) => {
     
     res.send(`Pago realizado por la cantidad de ${cantidad}`);
 });
-router.get('/pagarform/:servicio',(req,res) => {
+router.get('/pagarform/:servicio',loginControllers.ensureAuthenticated,(req,res) => {
     const servicio =req.params.servicio;
     res.render('pagar',{ user: req.user, servicio:servicio});
 });
@@ -102,7 +102,7 @@ router.post('/pagar/:formapago', (req, res) => {
     });
 });
 
-router.get('/pagartarjeta', (req, res) => {
+router.get('/pagartarjeta',loginControllers.ensureAuthenticated, (req, res) => {
     res.render('tarjeta',{ user: req.user});
 });
 router.post('/pagartarjeta', (req, res) => {
