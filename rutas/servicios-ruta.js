@@ -8,7 +8,7 @@ router.get('/pagar', (req, res) => {
 
 router.post('/pagar', (req, res) => {
     const { cantidad } = req.body;
-    // Aquí puedes agregar la lógica para procesar el pago
+    
     res.send(`Pago realizado por la cantidad de ${cantidad}`);
 });
 
