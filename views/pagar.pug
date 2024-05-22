@@ -7,14 +7,31 @@ block content
         .card-body
           a.btn.btn-danger.flex-fill.mb-2(href='/index') Inicio
           h3.text-center Servicio a pagar #{servicio}
-          
-          
-          form(action='/depositar' method='post')
+
+          form#pagoForm(action='/pagar/' method='post')
             .form-group
-                label(for='username') Cantidad
-                input.form-control(type='text' id='username' name='cantidad' required)
+                label(for='cantidad') Cantidad
+                input.form-control(type='text' id='cantidad' name='cantidad' required)
             .form-group
-                label(for='password') Concepto
-                input.form-control(type='password' id='password' name='concepto' required)
+                label(for='concepto') Concepto
+                input.form-control(type='text' id='concepto' name='concepto' required)
             .form-group
-                button.btn.btn-danger.btn-block(type='submit') Depositar
+                label(for='formaPago') Forma de Pago
+                select.form-control(id='formaPago' name='formaPago' required)
+                    option(value='') --Seleccione una opción--
+                    option(value='credito') Tarjeta de Crédito
+                    option(value='debito') Tarjeta de Débito
+            .form-group
+                button.btn.btn-danger.btn-block(type='button' onclick='submitForm()') Pagar
+
+    script.
+        function submitForm(){
+            var formaPago = document.getElementById('formaPago').value;
+            if (formaPago) {
+                var form = document.getElementById('pagoForm');
+                form.action = '/pagar/' + formaPago;
+                form.submit();
+            } else {
+                alert('Por favor seleccione una forma de pago.');
+            }
+        }

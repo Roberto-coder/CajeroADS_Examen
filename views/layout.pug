@@ -15,6 +15,7 @@ html
         .user-info.text-right
           p.mb-1 Bienvenido, #{user.nombre}
           p.mb-1 Saldo: $#{user.saldo}
+          p.mb-1 Credito: $#{user.credito}
           a.btn.btn-danger.flex-fill.mb-2(href='/logout') Cerrar sesión
       hr(style="border: 1px solid red;")
       block content
