@@ -144,6 +144,7 @@ CREATE TABLE `tarjetacredito` (
   `fechaVencimiento` varchar(45) NOT NULL,
   `credito` decimal(8,2) NOT NULL,
   `PIN` int NOT NULL,
+  `limiteCredito` decimal(8,2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -154,7 +155,7 @@ CREATE TABLE `tarjetacredito` (
 
 LOCK TABLES `tarjetacredito` WRITE;
 /*!40000 ALTER TABLE `tarjetacredito` DISABLE KEYS */;
-INSERT INTO `tarjetacredito` VALUES (1,'1245','03/27',2250.00,59);
+INSERT INTO `tarjetacredito` VALUES (1,'1245','03/27',10000.00,59,10000.00);
 /*!40000 ALTER TABLE `tarjetacredito` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,7 +182,7 @@ CREATE TABLE `tarjetadebito` (
 
 LOCK TABLES `tarjetadebito` WRITE;
 /*!40000 ALTER TABLE `tarjetadebito` DISABLE KEYS */;
-INSERT INTO `tarjetadebito` VALUES (1,5092.00,'1234','04/26',123);
+INSERT INTO `tarjetadebito` VALUES (1,5112.00,'1234','04/26',123);
 /*!40000 ALTER TABLE `tarjetadebito` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,7 +208,7 @@ CREATE TABLE `transaccion` (
   CONSTRAINT `idBanco` FOREIGN KEY (`idBanco`) REFERENCES `cbanco` (`idcbanco`),
   CONSTRAINT `idCliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`id`),
   CONSTRAINT `idest` FOREIGN KEY (`idEstado`) REFERENCES `estados` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,7 +217,7 @@ CREATE TABLE `transaccion` (
 
 LOCK TABLES `transaccion` WRITE;
 /*!40000 ALTER TABLE `transaccion` DISABLE KEYS */;
-INSERT INTO `transaccion` VALUES (1,1,4,100.00,1,'Depósito','22/05/2024'),(2,1,4,100.00,1,'SAT','22/05/2024'),(3,1,4,500.00,1,'CFE','22/05/2024'),(4,1,4,5.00,1,'retiro','22/05/2024'),(5,1,4,5000.00,1,'Depósito','22/05/2024');
+INSERT INTO `transaccion` VALUES (1,1,4,100.00,1,'Depósito','22/05/2024'),(2,1,4,100.00,1,'SAT','22/05/2024'),(3,1,4,500.00,1,'CFE','22/05/2024'),(4,1,4,5.00,1,'retiro','22/05/2024'),(5,1,4,5000.00,1,'Depósito','22/05/2024'),(6,1,4,100.00,2,'retiro','22/05/2024'),(7,1,4,50.00,2,'Retiro','22/05/2024'),(8,1,4,50.00,1,'Depósito','22/05/2024'),(9,1,4,20.00,1,'Pagar crédito','22/05/2024'),(10,1,4,30.00,1,'Pago de crédito','22/05/2024'),(11,1,4,10000.00,1,'Pago de crédito','22/05/2024'),(12,1,4,10000.00,1,'Pago de crédito','22/05/2024'),(13,1,4,4000.00,2,'SAT','22/05/2024'),(14,1,4,10000.00,1,'Pago de crédito','22/05/2024'),(15,1,4,5000.00,2,'SAT','22/05/2024'),(16,1,4,5000.00,2,'CDMX','22/05/2024'),(17,1,4,10000.00,1,'Pago de crédito','22/05/2024'),(18,1,4,5000.00,2,'SAT','22/05/2024'),(19,1,4,1000.00,1,'Pago de crédito','22/05/2024'),(20,1,4,10000.00,1,'Pago de crédito','22/05/2024'),(21,1,4,10000.00,2,'SAT','22/05/2024'),(22,1,4,5000.00,1,'Pago de crédito','22/05/2024'),(23,1,4,5000.00,1,'Pago de crédito','22/05/2024'),(24,1,4,5000.00,1,'Pago de crédito','22/05/2024'),(25,1,4,5000.00,1,'Depósito','22/05/2024');
 /*!40000 ALTER TABLE `transaccion` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -229,4 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22  1:51:10
+-- Dump completed on 2024-05-22  9:43:37
