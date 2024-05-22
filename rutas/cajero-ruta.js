@@ -84,8 +84,19 @@ router.get('/retirar', (req, res) =>{
     res.render('retirar', { user: req.user });
 });
 
-router.get('/transacciones', (req, res) =>{
-    res.render('transacciones',{ user: req.user });
+
+router.get('/transacciones', (req, res) => {
+    const idCliente = req.id
+    console.log(idCliente)
+
+    pool.query('SELECT * FROM transaccion WHERE idCliente = ?;', [idCliente], (error, results) => {
+        if (error) {
+            console.error('Error al obtener los datos:', error);
+            return res.status(500).send('Error interno del servidor');
+        }
+        res.render('transacciones', { user: req.user, transacciones: results });
+    });
 });
+
 export default router;
 
