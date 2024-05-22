@@ -5,7 +5,7 @@ html
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
-    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='./css/style.css')
   body
     hr(style="border: 8px solid red;")
     .container
@@ -15,6 +15,7 @@ html
         .user-info.text-right
           p.mb-1 Bienvenido, #{user.nombre}
           p.mb-1 Saldo: $#{user.saldo}
+          a.btn.btn-danger.flex-fill.mb-2(href='/logout') Cerrar sesión
       hr(style="border: 1px solid red;")
       block content
 

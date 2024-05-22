@@ -8,6 +8,18 @@ const router = express.Router();
 router.get('/', (req,res)=>{
     res.render('login');
 });
+
+router.get('/logout', (req,res)=>{
+    const id = req.user.id;
+    req.logOut(function(err){
+        if(err){
+            return next(err);
+        }
+        req.session.destroy(() => {
+            res.redirect('/');
+        });
+    });
+});
 router.get('/signup', (req,res)=>{
     res.render('signup');
 });

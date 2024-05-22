@@ -42,7 +42,7 @@ router.get('/retirar', (req, res) =>{
 });
 
 router.get('/transacciones', (req, res) =>{
-    res.render('transacciones');
+    res.render('transacciones',{ user: req.user });
 });
 export default router;
 

@@ -5,6 +5,6 @@ const pool = mysql.createPool({
     port: 3306,
     database: 'bancoads',
     user: 'root',
-    password: 'root'
+    password: 'admin123'
 });
 export default pool;

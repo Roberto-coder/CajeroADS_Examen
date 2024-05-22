@@ -3,7 +3,7 @@ extends layout
 block content
   .container
     .header
-      h1 Pagar Servicio
+      h1 Pagar Servicio #{user.saldo}
       .search-bar
         input(type="text" placeholder="Nombre o núm. de convenio")
         button
@@ -12,37 +12,38 @@ block content
     .quick-access
       h2 Acceso Rápido
       .service-list
-        .service
+        a(href="/pagarform/SAT").service
           .service-icon(style="background-image: url('imagenes/sat.jpg');")
           .service-details
             h3 SAT
             p Pago referenciado SAT
-        .service
+              
+        a(href="/pagarform/CDMX").service
           .service-icon(style="background-image: url('imagenes/cdmx.jpg');")
           .service-details
             h3 CDMX
             p Pago a la Tesorería CDMX
-        .service
+        a(href="/pagarform/CFE").service
           .service-icon(style="background-image: url('imagenes/brand.gif');")
           .service-details
             h3 CFE
             p Número de convenio 000578869
-        .service
+        a(href="/pagarform/TELMEX").service
           .service-icon(style="background-image: url('/imagenes/telmex.png');")
           .service-details
             h3 TELMEX
             p Número de convenio 000035241
-        .service
+        a(href="/pagarform/amex").service
           .service-icon(style="background-image: url('/imagenes/amex.jpg');")
           .service-details
             h3 AMERICAN EXPRESS
             p Número de convenio 000081306
-        .service
+        a(href="/pagarform/totalplay").service
           .service-icon(style="background-image: url('/imagenes/totalplay.png');")
           .service-details
             h3 TOTAL PLAY
             p Número de convenio 001356976
-        .service
+        a(href="/pagarform/izzi").service
           .service-icon(style="background-image: url('/imagenes/izzi.png');")
           .service-details
             h3 IZZI
