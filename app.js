@@ -4,6 +4,7 @@ import path from "path";
 import indexruta from "./rutas/index-ruta.js";
 import loginruta from "./rutas/login-ruta.js";
 import cajeroruta from "./rutas/cajero-ruta.js";
+import pagarservicios from "./rutas/servicios-ruta.js";
 const __dirname = (process.platform === "win32")
         ? path.resolve()
         : path.dirname(new URL(import.meta.url).pathname);
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', indexruta);
 app.use('/', loginruta);
 app.use('/', cajeroruta);
+app.use('/', pagarservicios);
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

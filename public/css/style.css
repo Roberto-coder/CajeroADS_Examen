@@ -92,3 +92,101 @@ button {
 button:hover {
   background-color: #a00c2c;
 }
+
+/*PAGO DE SERVICIOS*/
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button .icon-search {
+  background-image: url('../imagenes/lupa.png');
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-size: cover;
+}
+
+.quick-access {
+  margin-top: 20px;
+}
+
+.quick-access h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.service-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 40%;
+  background-size: cover;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+}
+
+.service-details h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #007bff;
+}
+
+.service-details p {
+  margin: 0;
+  color: #555;
+}
