@@ -157,7 +157,7 @@ router.post('/pagartarjeta', (req, res) => {
                     }
 
                     // Registro de la transacción
-                    const insertQuery = 'INSERT INTO transaccion (idCliente, idBanco, monto, idEstado, concepto, fecha) VALUES (?, 4, ?, 1, "Pago de crédito", DATE_FORMAT(CURRENT_DATE(), "%d/%m/%Y"))';
+                    const insertQuery = 'INSERT INTO transaccion (idCliente, idBanco, monto, idEstado, concepto, fecha) VALUES (?, 4, ?, 2, "Pago de crédito", DATE_FORMAT(CURRENT_DATE(), "%d/%m/%Y"))';
                     connection.query(insertQuery, [idCliente, cantidad], (error) => {
                         if (error) {
                             return connection.rollback(() => {
