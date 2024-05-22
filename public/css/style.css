@@ -217,3 +217,12 @@ button:hover {
   margin: 0;
   color: #555;
 }
+
+.positive {
+  color: rgb(7, 206, 7)
+}
+    
+.negative{
+    color: rgb(215, 62, 32)
+}
+    

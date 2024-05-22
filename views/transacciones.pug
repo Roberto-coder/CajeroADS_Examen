@@ -25,13 +25,16 @@ block content
             tbody
                 each transaccion in transacciones
                   tr
-                    td.bg-light-red= transaccion.id 
-                    td.bg-light-red= transaccion.concepto
-                    td.bg-light-red $#{transaccion.monto}
-                    td.bg-light-red= transaccion.fecha
+                  td.bg-light-red= transaccion.id 
+                  td.bg-light-red= transaccion.concepto
+                  if transaccion.idEstado == 1
+                    td.bg-light-red.positive +$#{transaccion.monto}
+                  else
+                    td.bg-light-red.negative -$#{transaccion.monto}
+                  td.bg-light-red= transaccion.fecha
                 tr
                 td.bg-light-red 1
-                td.bg-light-red Gastado en entretenimiento
+                td.bg-light-red Transaccion Muestra
                 td.bg-light-red $20,000
                 td.bg-light-red 21/05/2024
                 

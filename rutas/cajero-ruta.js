@@ -97,7 +97,7 @@ router.post('/retirar', (req, res) => {
                     });
                 }
 
-                const insertQuery = 'INSERT INTO transaccion (idCliente, idBanco, monto, idEstado, concepto, fecha) VALUES (?, 4, ?, 1, ?, DATE_FORMAT(CURRENT_DATE(), "%d/%m/%Y"));';
+                const insertQuery = 'INSERT INTO transaccion (idCliente, idBanco, monto, idEstado, concepto, fecha) VALUES (?, 4, ?, 2, ?, DATE_FORMAT(CURRENT_DATE(), "%d/%m/%Y"));';
                 connection.query(insertQuery, [req.user.id, cantidad, concepto], (error) => {
                     if (error) {
                         return connection.rollback(() => {
@@ -134,14 +134,12 @@ router.get('/retirar', (req, res) => {
 
 router.get('/transacciones', (req, res) => {
     const idCliente = req.user.id;
-    console.log(idCliente);
 
     pool.query('SELECT * FROM transaccion WHERE idCliente = ?;', [idCliente], (error, results) => {
         if (error) {
             console.error('Error al obtener los datos:', error);
             return res.status(500).send('Error interno del servidor');
         }
-        console.log(results);
         res.render('transacciones', { user: req.user, transacciones: results });
     });
 });
