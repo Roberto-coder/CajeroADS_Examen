@@ -3,7 +3,7 @@ import pool from '../config/database.js';
 
 export const mostrarTransacciones=(callback) => {
 
-    const sqlTransacciones = 'select * from historico_transaccion;';
+    const sqlTransacciones = 'select * from transaccion;';
 
     pool.query(sqlTransacciones, (errorTransacciones, resultadosTransacciones) => {
         if (errorTransacciones) {
