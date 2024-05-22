@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: bancoads
+-- Host: localhost    Database: bancoads
 -- ------------------------------------------------------
--- Server version	8.3.0
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,7 @@ CREATE TABLE `cbanco` (
   `idcbanco` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
   PRIMARY KEY (`idcbanco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +35,7 @@ CREATE TABLE `cbanco` (
 
 LOCK TABLES `cbanco` WRITE;
 /*!40000 ALTER TABLE `cbanco` DISABLE KEYS */;
+INSERT INTO `cbanco` VALUES (1,'BBVA'),(2,'Banco Azteca'),(3,'Santander'),(4,'Maze Bank');
 /*!40000 ALTER TABLE `cbanco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +97,7 @@ CREATE TABLE `estados` (
 
 LOCK TABLES `estados` WRITE;
 /*!40000 ALTER TABLE `estados` DISABLE KEYS */;
-INSERT INTO `estados` VALUES (1,'Rechazada'),(2,'Aprobada');
+INSERT INTO `estados` VALUES (1,'Recibe'),(2,'Envia');
 /*!40000 ALTER TABLE `estados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,14 +223,7 @@ CREATE TABLE `transaccion` (
   `monto` decimal(8,2) NOT NULL,
   `idEstado` int NOT NULL,
   `concepto` varchar(45) NOT NULL,
-  `SPEI` varchar(50) DEFAULT NULL,
   `fecha` varchar(45) DEFAULT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
-  `paterno` varchar(45) DEFAULT NULL,
-  `materno` varchar(45) DEFAULT NULL,
-  `cuenta` varchar(45) DEFAULT NULL,
-  `tarjeta` varchar(45) DEFAULT NULL,
-  `CLABE` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idBanco_idx` (`idBanco`),
   KEY `idCliente_idx` (`idCliente`),
@@ -258,4 +252,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-21 21:56:36
+-- Dump completed on 2024-05-21 23:37:11
