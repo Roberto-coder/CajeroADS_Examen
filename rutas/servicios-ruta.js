@@ -70,7 +70,7 @@ router.post('/pagar/:formapago', (req, res) => {
                     });
                 }
 
-                const insertQuery = 'INSERT INTO transaccion (idCliente, idBanco, monto, idEstado, concepto, fecha) VALUES (?, 4, ?, 1, ?, DATE_FORMAT(CURRENT_DATE(), "%d/%m/%Y"));';
+                const insertQuery = 'INSERT INTO transaccion (idCliente, idBanco, monto, idEstado, concepto, fecha) VALUES (?, 4, ?, 2, ?, DATE_FORMAT(CURRENT_DATE(), "%d/%m/%Y"));';
 
                 connection.query(insertQuery, [idCliente, cantidad, concepto], (error) => {
                     if (error) {
