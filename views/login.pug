@@ -26,7 +26,10 @@ html
                     input.form-control(type='password' id='password' name='clave' required)
                   .form-group
                     button.btn.btn-danger.btn-block(type='submit') Iniciar Sesión 
-
+                    if error_msg.length > 0
+                                .error
+                                    each err in error_msg
+                                        p #{err}
       footer.text-center.mt-5
         p &copy; 2024 Maze Bank. Todos los derechos reservados.
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')

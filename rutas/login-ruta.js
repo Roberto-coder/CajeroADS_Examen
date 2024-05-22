@@ -6,7 +6,8 @@ const router = express.Router();
 
 
 router.get('/', (req,res)=>{
-    res.render('login');
+    const error_msg = req.flash('error'); // Obtiene el mensaje de error
+    res.render('login', { error_msg });
 });
 
 router.get('/logout', (req,res)=>{
