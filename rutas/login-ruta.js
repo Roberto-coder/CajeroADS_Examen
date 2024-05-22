@@ -14,7 +14,7 @@ router.get('/signup', (req,res)=>{
 
 // Ruta para autenticar y redirigir basada en el rol del usuario
 router.post('/signin', passport.authenticate('local', {
-    failureRedirect: '/login', // Redirigir en caso de falla de autenticación
+    failureRedirect: '/', // Redirigir en caso de falla de autenticación
     failureFlash: true // Opcional: para mensajes de flash
 }), (req, res) => {
     // Verificar el rol del usuario después de la autenticación

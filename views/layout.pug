@@ -13,8 +13,8 @@ html
         .logo
           img(src='/imagenes/logo.jpg' alt='Maze Bank Logo')
         .user-info.text-right
-          p.mb-1 Bienvenido, #{username}
-          p.mb-1 Saldo: $#{balance}
+          p.mb-1 Bienvenido, #{user.nombre}
+          p.mb-1 Saldo: $#{user.saldo}
       hr(style="border: 1px solid red;")
       block content
 

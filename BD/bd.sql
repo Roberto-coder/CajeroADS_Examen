@@ -137,6 +137,7 @@ CREATE TABLE `tarjetadebito` (
   `numero` varchar(30) NOT NULL,
   `Fecha` varchar(30) NOT NULL,
   `CVV` int NOT NULL,
+  `saldo` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -147,7 +148,7 @@ CREATE TABLE `tarjetadebito` (
 
 LOCK TABLES `tarjetadebito` WRITE;
 /*!40000 ALTER TABLE `tarjetadebito` DISABLE KEYS */;
-INSERT INTO `tarjetadebito` VALUES (1,'1234','04/26',123);
+INSERT INTO `tarjetadebito` VALUES (1,'1234','04/26',123,97);
 /*!40000 ALTER TABLE `tarjetadebito` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-21 17:03:00
+-- Dump completed on 2024-05-21 18:16:14
