@@ -40,8 +40,9 @@ router.post('/retirar', (req, res) =>{
 router.get('/retirar', (req, res) =>{
     res.render('retirar', { user: req.user });
 });
+
 router.get('/transacciones', (req, res) =>{
-    res.render('transacciones', { user: req.user });
+    res.render('transacciones');
 });
 export default router;
 
