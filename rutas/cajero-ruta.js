@@ -1,5 +1,6 @@
 import express from "express";
 import pool from '../config/database.js';
+import loginControllers  from "../controllers/loginControllers.js";
 const router = express.Router();
 
 router.post('/depositar', (req, res) => {
@@ -58,7 +59,7 @@ router.post('/depositar', (req, res) => {
     });
 });
 
-router.get('/depositar',loginControllers.ensureAuthenticated, (req, res) => {
+router.get('/depositar', loginControllers.ensureAuthenticated, (req, res) => {
     res.render('depositar', { user: req.user });
 });
 

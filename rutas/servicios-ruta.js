@@ -1,5 +1,6 @@
 import express, { request } from "express";
 import pool from '../config/database.js';
+import loginControllers from "../controllers/loginControllers.js";
 const router = express.Router();
 
 router.get('/pagar',loginControllers.ensureAuthenticated, (req, res) => {
