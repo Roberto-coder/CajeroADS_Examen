@@ -58,7 +58,7 @@ router.post('/depositar', (req, res) => {
     });
 });
 
-router.get('/depositar', (req, res) => {
+router.get('/depositar',loginControllers.ensureAuthenticated, (req, res) => {
     res.render('depositar', { user: req.user });
 });
 
@@ -128,11 +128,11 @@ router.post('/retirar', (req, res) => {
     });
 });
 
-router.get('/retirar', (req, res) => {
+router.get('/retirar', loginControllers.ensureAuthenticated, (req, res) => {
     res.render('retirar', { user: req.user });
 });
 
-router.get('/transacciones', (req, res) => {
+router.get('/transacciones', loginControllers.ensureAuthenticated, (req, res) => {
     const idCliente = req.user.id;
 
     pool.query('SELECT * FROM transaccion WHERE idCliente = ? ORDER BY fecha DESC LIMIT 16;', [idCliente], (error, results) => {
