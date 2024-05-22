@@ -7,7 +7,7 @@ block content
         .card-body
           a.btn.btn-danger.flex-fill.mb-2(href='/index') Inicio
           h3.text-center Pagar crédito
-          p.display-4.text-center $
+          p.display-4.text-center $#{user.credito}
           
           form(action='/pagartarjeta' method='post')
             .form-group

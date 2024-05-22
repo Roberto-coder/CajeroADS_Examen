@@ -7,7 +7,7 @@ block content
         .card-body
           a.btn.btn-danger.flex-fill.mb-2(href='/index') Inicio
           h3.text-center Saldo Actual
-          p.display-4.text-center $#{balance}
+          p.display-4.text-center $#{user.saldo}
 
           form(action='/retirar' method='post')
             .form-group
