@@ -24,11 +24,11 @@ block content
                 th Fecha
             tbody
                 each transaccion in transacciones
-                    tr
-                    td=transaccion.user_id 
-                    td=transaccion.user_name
-                    td=transaccion.user_email
-                    td=transaccion.user_email
+                  tr
+                    td.bg-light-red= transaccion.id 
+                    td.bg-light-red= transaccion.concepto
+                    td.bg-light-red $#{transaccion.monto}
+                    td.bg-light-red= transaccion.fecha
                 tr
                 td.bg-light-red 1
                 td.bg-light-red Gastado en entretenimiento
