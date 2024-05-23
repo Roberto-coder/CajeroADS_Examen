@@ -21,9 +21,12 @@ html
           img(src='/imagenes/logo.jpg' alt='Maze Bank Logo')
         .user-info.text-right
           // Información del usuario
-          p.mb-1 Bienvenido, #{user.nombre}  // Muestra el nombre del usuario
-          p.mb-1 Saldo: $#{user.saldo}  // Muestra el saldo del usuario
-          p.mb-1 Credito: $#{user.credito}  // Muestra el crédito del usuario
+          p.mb-1 Bienvenido, #{user.nombre}  
+            // Muestra el nombre del usuario
+          p.mb-1 Saldo: $#{user.saldo}  
+            // Muestra el saldo del usuario
+          p.mb-1 Credito: $#{user.credito}  
+            // Muestra el crédito del usuario
           // Botón para cerrar sesión
           a.btn.btn-danger.flex-fill.mb-2(href='/logout') Cerrar sesión
       // Línea horizontal delgada en color rojo

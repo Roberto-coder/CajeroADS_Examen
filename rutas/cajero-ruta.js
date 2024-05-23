@@ -168,3 +168,4 @@ router.get('/retirar', loginControllers.ensureAuthenticated, (req, res) => {
 });
 
 // Manejar
+export default router;
