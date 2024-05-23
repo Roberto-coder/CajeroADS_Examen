@@ -167,5 +167,17 @@ router.get('/retirar', loginControllers.ensureAuthenticated, (req, res) => {
     res.render('retirar', { user: req.user });
 });
 
+router.get('/transacciones', loginControllers.ensureAuthenticated, (req, res) => {
+    const idCliente = req.user.id;
+
+    pool.query("SELECT * FROM transaccion WHERE idCliente = ? ORDER BY STR_TO_DATE(fecha, '%d/%m/%Y') DESC LIMIT 16;", [idCliente], (error, results) => {
+        if (error) {
+            console.error('Error al obtener los datos:', error);
+            return res.status(500).send('Error interno del servidor');
+        }
+        res.render('transacciones', { user: req.user, transacciones: results });
+    });
+});
+
 // Manejar
 export default router;
