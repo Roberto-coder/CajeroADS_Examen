@@ -1,37 +1,66 @@
+// Extiende el diseño principal
 extends layout
 
 block content
   .row.justify-content-center
+    // Columna que ocupa 6/12 del ancho en pantallas medianas
     .col-md-6
+      // Contenedor con clase card de Bootstrap
       .card
+        // Cuerpo de la tarjeta
         .card-body
+          // Botón para ir a la página de inicio
           a.btn.btn-danger.flex-fill.mb-2(href='/index') Inicio
+          // Título del servicio a pagar
           h3.text-center Servicio a pagar #{servicio}
 
+          // Formulario de pago
           form#pagoForm(action='/pagar/' method='post')
+            // Grupo de formulario para la cantidad
             .form-group
+                // Etiqueta para el campo de cantidad
                 label(for='cantidad') Cantidad
+                // Campo de entrada para la cantidad, requerido
                 input.form-control(type='text' id='cantidad' name='cantidad' required)
+            // Grupo de formulario para el concepto
             .form-group
+                // Etiqueta para el campo de concepto
                 label(for='concepto') Concepto
+                // Campo de entrada para el concepto, requerido
                 input.form-control(type='text' id='concepto' name='concepto' required)
+            // Grupo de formulario para la forma de pago
             .form-group
+                // Etiqueta para el campo de forma de pago
                 label(for='formaPago') Forma de Pago
+                // Menú desplegable para seleccionar la forma de pago, requerido
                 select.form-control(id='formaPago' name='formaPago' required)
+                    // Opción por defecto
                     option(value='') --Seleccione una opción--
+                    // Opción para tarjeta de crédito
                     option(value='credito') Tarjeta de Crédito
+                    // Opción para tarjeta de débito
                     option(value='debito') Tarjeta de Débito
+            // Grupo de formulario para el botón de pago
             .form-group
+                // Botón para enviar el formulario, llama a la función submitForm() al hacer clic
                 button.btn.btn-danger.btn-block(type='button' onclick='submitForm()') Pagar
 
+    // Script en línea para manejar la lógica de envío del formulario
     script.
+        // Función para enviar el formulario
         function submitForm(){
+            // Obtiene el valor seleccionado de la forma de pago
             var formaPago = document.getElementById('formaPago').value;
+            // Verifica si se ha seleccionado una forma de pago
             if (formaPago) {
+                // Obtiene el formulario por su ID
                 var form = document.getElementById('pagoForm');
+                // Modifica la acción del formulario para incluir la forma de pago en la URL
                 form.action = '/pagar/' + formaPago;
+                // Envía el formulario
                 form.submit();
             } else {
+                // Muestra una alerta si no se ha seleccionado una forma de pago
                 alert('Por favor seleccione una forma de pago.');
             }
         }

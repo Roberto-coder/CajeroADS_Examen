@@ -1,37 +1,63 @@
+// Define el tipo de documento como HTML5
 doctype html
 html
   head
+    // Título de la página
     title Maze Bank - GTA 5
+    // Metadatos de la página
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // Enlace a la hoja de estilos de Bootstrap
     link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    // Enlace a la hoja de estilos personalizada
     link(rel='stylesheet' href='css/style.css')
   body
     .container
+      // Encabezado centrado con margen superior
       header.text-center.mt-5
+        // Título del encabezado
         h1 Maze Bank
+        // Mensaje de bienvenida
         p Bienvenido a Maze Bank. Por favor, inicie sesión para acceder a su cuenta.
 
+      // Contenido principal con margen superior
       main.mt-4
+        // Fila centrada horizontalmente
         .row.justify-content-center
+          // Columna que ocupa 6/12 del ancho en pantallas medianas
           .col-md-6
+            // Contenedor con clase card de Bootstrap
             .card
+              // Cuerpo de la tarjeta
               .card-body
+                // Formulario de inicio de sesión
                 form(action='/signin' method='post')
+                  // Grupo de formulario para la cuenta
                   .form-group
+                    // Etiqueta para el campo de cuenta
                     label(for='username') Cuenta
+                    // Campo de entrada para la cuenta, requerido
                     input.form-control(type='text' id='username' name='tarjeta' required)
+                  // Grupo de formulario para la clave
                   .form-group
+                    // Etiqueta para el campo de clave
                     label(for='password') Clave
+                    // Campo de entrada para la clave, requerido
                     input.form-control(type='password' id='password' name='clave' required)
+                  // Grupo de formulario para el botón de envío
                   .form-group
+                    // Botón para enviar el formulario y iniciar sesión
                     button.btn.btn-danger.btn-block(type='submit') Iniciar Sesión 
+                    // Mostrar mensajes de error si existen
                     if error_msg.length > 0
-                                .error
-                                    each err in error_msg
-                                        p #{err}
+                      .error
+                        each err in error_msg
+                          p #{err}
+      // Pie de página centrado con margen superior
       footer.text-center.mt-5
+        // Derechos de autor
         p &copy; 2024 Maze Bank. Todos los derechos reservados.
+    // Scripts de JavaScript
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
     script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')

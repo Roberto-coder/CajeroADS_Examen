@@ -1,43 +1,58 @@
+// Extiende el layout principal
 extends layout
 
+// Define el bloque de contenido específico para esta plantilla
 block content
+  // Row de Bootstrap con contenido centrado
   .row.justify-content-center
+    // Columna de Bootstrap con ancho medio en dispositivos medianos
     .col-md-8
+      // Tarjeta de Bootstrap
       .card
+        // Cuerpo de la tarjeta
         .card-body
+          // Contenedor para el encabezado centrado
           .header-container.text-center
+            // Tabla para mostrar el nombre de usuario y enlace de regreso
             table.w-100.table-borderless(style="color:white; font-size: ")
               tr
+                // Nombre de usuario
                 td.text-left
                   b Usuario: #{user.name}
+                // Enlace de regreso al menú principal
                 td.text-center.mt-5(colspan="2")
                   a.btn.btn-danger(href='/index') Regresar al Menú
+              // Encabezado para los últimos movimientos
               tr
                 td.text-center Últimos movimientos
+          // Mensaje de texto centrado
           p.mb-2.mt-2.text-center Estas son tus 16 últimas transacciones
+          // Tabla para mostrar las transacciones
           table.table.table-striped.table-scrollable(style="max-height: 100px; overflow-y: auto;")
             thead
-                tr
+              tr
                 th ID
                 th Detalle
                 th Monto
                 th Fecha
             tbody
-                each transaccion in transacciones
-                  tr
+              // Ciclo para iterar sobre las transacciones
+              each transaccion in transacciones
+                tr
+                  // ID de la transacción
                   td.bg-light-red= transaccion.id 
+                  // Detalle de la transacción
                   td.bg-light-red= transaccion.concepto
+                  // Monto de la transacción (positivo si es un ingreso, negativo si es un gasto)
                   if transaccion.idEstado == 1
                     td.bg-light-red.positive +$#{transaccion.monto}
                   else
                     td.bg-light-red.negative -$#{transaccion.monto}
+                  // Fecha de la transacción
                   td.bg-light-red= transaccion.fecha
+                // Ejemplo de transacción (relleno)
                 tr
-                td.bg-light-red 1
-                td.bg-light-red Transaccion Muestra
-                td.bg-light-red $20,000
-                td.bg-light-red 21/05/2024
-                
-
-
-
+                  td.bg-light-red 1
+                  td.bg-light-red Transacción Muestra
+                  td.bg-light-red $20,000
+                  td.bg-light-red 21/05/2024

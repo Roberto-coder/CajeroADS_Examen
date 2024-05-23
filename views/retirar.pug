@@ -1,20 +1,36 @@
+// Extiende el diseño principal
 extends layout
 
 block content
   .row.justify-content-center
+    // Columna que ocupa 6/12 del ancho en pantallas medianas
     .col-md-6
+      // Contenedor con clase card de Bootstrap
       .card
+        // Cuerpo de la tarjeta
         .card-body
+          // Botón para ir a la página de inicio
           a.btn.btn-danger.flex-fill.mb-2(href='/index') Inicio
+          // Título del saldo actual
           h3.text-center Saldo Actual
+          // Muestra el saldo del usuario
           p.display-4.text-center $#{user.saldo}
 
+          // Formulario para retirar dinero
           form(action='/retirar' method='post')
+            // Grupo de formulario para la cantidad
             .form-group
+                // Etiqueta para el campo de cantidad
                 label(for='username') Cantidad
+                // Campo de entrada para la cantidad, requerido
                 input.form-control(type='text' id='username' name='cantidad' required)
+            // Grupo de formulario para el concepto
             .form-group
+                // Etiqueta para el campo de concepto
                 label(for='password') Concepto
+                // Campo de entrada para el concepto, con valor por defecto "Retiro", solo lectura
                 input.form-control(type='text' id='concepto' name='concepto' value='Retiro' readonly)
+            // Grupo de formulario para el botón de retirar
             .form-group
+                // Botón para enviar el formulario
                 button.btn.btn-danger.btn-block(type='submit') Retirar

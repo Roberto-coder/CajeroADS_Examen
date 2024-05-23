@@ -1,21 +1,37 @@
-extends layout
+// Extiende el diseño base del archivo layout.pug
+extends layout  
 
-block content
+
+// Bloque de contenido que se insertará en la plantilla base
+block content 
+  // Fila con contenido centrado horizontalmente
   .row.justify-content-center
-    .col-md-6
-      if(error_msg)
-        h3.text-center(style="color: red") #{error_msg}
-      .card
-        .card-body
-          
-          h3.text-center Saldo Actual
-          p.display-4.text-center $#{user.saldo}
-          h3.text-center Credito
-          p.display-4.text-center $#{user.credito}
-          .mt-4
-            .btn-group-vertical.btn-group-lg.d-flex
-              a.btn.btn-danger.flex-fill.mb-2(href='/depositar') Depositar Dinero
-              a.btn.btn-danger.flex-fill.mb-2(href='/retirar') Retirar Dinero
-              a.btn.btn-danger.flex-fill.mb-2(href='/pagar') Pagar servicios
-              a.btn.btn-danger.flex-fill.mb-2(href='/pagartarjeta') Pagar tarjeta
-              a.btn.btn-danger.flex-fill(href='/transacciones') Ver Transacciones
+    // Columna que ocupa 6/12 del ancho en pantallas medianas  
+    .col-md-6  
+      // Si existe un mensaje de error, se muestra
+      if(error_msg)  
+         // Mensaje de error centrado y en color rojo
+        h3.text-center(style="color: red") #{error_msg} 
+      .card 
+        // Cuerpo de la tarjeta
+        .card-body  
+            // Título "Saldo Actual" centrado
+          h3.text-center Saldo Actual  
+             // Muestra el saldo del usuario en formato grande y centrado
+          p.display-4.text-center $#{user.saldo} 
+          h3.text-center Credito 
+          // Muestra el crédito del usuario en formato grande y centrado
+          p.display-4.text-center $#{user.credito}  
+          .mt-4  
+             // Grupo de botones verticales, grandes y flexibles
+            .btn-group-vertical.btn-group-lg.d-flex 
+              // Botón "Depositar Dinero" con margen inferior
+              a.btn.btn-danger.flex-fill.mb-2(href='/depositar')
+                // Botón "Retirar Dinero" con margen inferior 
+              a.btn.btn-danger.flex-fill.mb-2(href='/retirar')
+                // Botón "Pagar servicios" con margen inferior 
+              a.btn.btn-danger.flex-fill.mb-2(href='/pagar')
+               // Botón "Pagar tarjeta" con margen inferior
+              a.btn.btn-danger.flex-fill.mb-2(href='/pagartarjeta')
+                // Botón "Ver Transacciones"
+              a.btn.btn-danger.flex-fill(href='/transacciones')

@@ -2,26 +2,42 @@ doctype html
 html
   head
     title Maze Bank - Bienvenido
+    // Meta charset para soportar caracteres UTF-8
     meta(charset='UTF-8')
+    // Meta viewport para asegurar que el sitio web sea responsivo
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // Enlace a la hoja de estilos de Bootstrap
     link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    // Enlace a la hoja de estilos personalizada
     link(rel='stylesheet' href='../css/style.css')
   body
+    // Línea horizontal gruesa en color rojo
     hr(style="border: 8px solid red;")
     .container
+      // Encabezado con clase flex para justificación y alineación
       header.d-flex.justify-content-between.align-items-center.mt-3.mb-3
         .logo
+          // Imagen del logo del banco
           img(src='/imagenes/logo.jpg' alt='Maze Bank Logo')
         .user-info.text-right
-          p.mb-1 Bienvenido, #{user.nombre}
-          p.mb-1 Saldo: $#{user.saldo}
-          p.mb-1 Credito: $#{user.credito}
+          // Información del usuario
+          p.mb-1 Bienvenido, #{user.nombre}  // Muestra el nombre del usuario
+          p.mb-1 Saldo: $#{user.saldo}  // Muestra el saldo del usuario
+          p.mb-1 Credito: $#{user.credito}  // Muestra el crédito del usuario
+          // Botón para cerrar sesión
           a.btn.btn-danger.flex-fill.mb-2(href='/logout') Cerrar sesión
+      // Línea horizontal delgada en color rojo
       hr(style="border: 1px solid red;")
+      // Bloque de contenido que se puede extender en otras vistas
       block content
 
+      // Pie de página centrado
       footer.text-center.mt-5
+        // Texto de derechos reservados
         p &copy; 2024 Maze Bank. Todos los derechos reservados.
+    // Script de jQuery para funcionalidad de JavaScript
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    // Script de Popper.js para Bootstrap
     script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js')
+    // Script de Bootstrap para funcionalidad adicional de JavaScript
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')

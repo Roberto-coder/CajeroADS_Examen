@@ -1,29 +1,67 @@
+// Extiende el layout principal
 extends layout
 
+// Define el bloque de contenido específico para esta plantilla
 block content
+  // Contenedor del formulario
   .form-container
+    // Título del formulario
     h1 Formulario de Datos
 
+    // Formulario que envía los datos a "/submit" utilizando el método POST
     form(action="/submit" method="post")
+      
+      // Primera fila del formulario
       .form-row
+        
+        // Primera columna de la primera fila
         .form-column
+          
+          // Grupo de elementos del formulario
           .form-group
+            // Etiqueta para el campo "Apellido Paterno"
             label(for="paterno") Apellido Paterno:
+            // Campo de entrada para el apellido paterno
             input(type="text" name="paterno" id="paterno")
+          
+          // Grupo de elementos del formulario
           .form-group
+            // Etiqueta para el campo "Apellido Materno"
             label(for="materno") Apellido Materno:
+            // Campo de entrada para el apellido materno
             input(type="text" name="materno" id="materno")
+        
+        // Segunda columna de la primera fila
         .form-column
+          
+          // Grupo de elementos del formulario
           .form-group
+            // Etiqueta para el campo "Nombre"
             label(for="nombre") Nombre:
+            // Campo de entrada para el nombre
             input(type="text" name="nombre" id="nombre")
+          
+          // Grupo de elementos del formulario
           .form-group
+            // Etiqueta para el campo "Número de Cuenta"
             label(for="cuenta") Número de Cuenta:
+            // Campo de entrada para el número de cuenta
             input(type="text" name="cuenta" id="cuenta")
+      
+      // Segunda fila del formulario
       .form-row
+        
+        // Columna única de la segunda fila
         .form-column
+          
+          // Grupo de elementos del formulario
           .form-group
+            // Etiqueta para el campo "Teléfono"
             label(for="celular") Teléfono:
+            // Campo de entrada para el número de teléfono
             input(type="text" name="celular" id="celular")
+      
+      // Grupo de elementos del formulario para el botón de envío
       .form-group
+        // Botón de envío con clases de Bootstrap y tipo "submit"
         button.btn.btn-danger.btn-block(type="submit") Enviar

@@ -1,20 +1,38 @@
+// Extiende el diseño base del archivo layout.pug
 extends layout
 
+// Bloque de contenido que se insertará en la plantilla base
 block content
+  // Fila con contenido centrado horizontalmente
   .row.justify-content-center
+    // Columna que ocupa 6/12 del ancho en pantallas medianas
     .col-md-6
+      // Contenedor con clase card de Bootstrap
       .card
+        // Cuerpo de la tarjeta
         .card-body
+          // Botón para ir a la página de inicio
           a.btn.btn-danger.flex-fill.mb-2(href='/index') Inicio
+          // Título "Saldo Actual" centrado
           h3.text-center Saldo Actual
+          // Muestra el saldo del usuario en formato grande y centrado
           p.display-4.text-center $#{user.saldo}
           
+          // Formulario para depositar dinero
           form(action='/depositar' method='post')
+            // Grupo de formulario para la cantidad
             .form-group
+                // Etiqueta para el campo de cantidad
                 label(for='username') Cantidad
+                // Campo de entrada para la cantidad, requerido
                 input.form-control(type='text' id='username' name='cantidad' required)
+            // Grupo de formulario para el concepto
             .form-group
+                // Etiqueta para el campo de concepto
                 label(for='passwordtext') Concepto
+                // Campo de entrada para el concepto, solo lectura y con valor predeterminado "Depósito"
                 input.form-control(type='text' id='concepto' name='concepto' value='Depósito' readonly)
+            // Grupo de formulario para el botón de envío
             .form-group
+                // Botón para enviar el formulario y realizar el depósito
                 button.btn.btn-danger.btn-block(type='submit') Depositar

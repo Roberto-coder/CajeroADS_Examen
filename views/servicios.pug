@@ -1,47 +1,77 @@
+// Extiende el diseño principal
 extends layout
 
 block content
+  // Contenedor principal
   .container
+    // Encabezado de la página
     .header
       h1 Pagar Servicio 
       
-
+    // Sección de acceso rápido
     .quick-access
       h2 Acceso Rápido
+      // Lista de servicios disponibles
       .service-list
+        // Enlace para pagar el servicio SAT
         a(href="/pagarform/SAT").service
+          // Icono del servicio SAT
           .service-icon(style="background-image: url('imagenes/sat.jpg');")
+          // Detalles del servicio SAT
           .service-details
             h3 SAT
             p Pago referenciado SAT
               
+        // Enlace para pagar el servicio CDMX
         a(href="/pagarform/CDMX").service
+          // Icono del servicio CDMX
           .service-icon(style="background-image: url('imagenes/cdmx.jpg');")
+          // Detalles del servicio CDMX
           .service-details
             h3 CDMX
             p Pago a la Tesorería CDMX
+
+        // Enlace para pagar el servicio CFE
         a(href="/pagarform/CFE").service
+          // Icono del servicio CFE
           .service-icon(style="background-image: url('imagenes/brand.gif');")
+          // Detalles del servicio CFE
           .service-details
             h3 CFE
             p Número de convenio 000578869
+
+        // Enlace para pagar el servicio TELMEX
         a(href="/pagarform/TELMEX").service
+          // Icono del servicio TELMEX
           .service-icon(style="background-image: url('/imagenes/telmex.png');")
+          // Detalles del servicio TELMEX
           .service-details
             h3 TELMEX
             p Número de convenio 000035241
+
+        // Enlace para pagar el servicio AMEX
         a(href="/pagarform/amex").service
+          // Icono del servicio AMEX
           .service-icon(style="background-image: url('/imagenes/amex.jpg');")
+          // Detalles del servicio AMEX
           .service-details
             h3 AMERICAN EXPRESS
             p Número de convenio 000081306
+
+        // Enlace para pagar el servicio Total Play
         a(href="/pagarform/totalplay").service
+          // Icono del servicio Total Play
           .service-icon(style="background-image: url('/imagenes/totalplay.png');")
+          // Detalles del servicio Total Play
           .service-details
             h3 TOTAL PLAY
             p Número de convenio 001356976
+
+        // Enlace para pagar el servicio IZZI
         a(href="/pagarform/izzi").service
+          // Icono del servicio IZZI
           .service-icon(style="background-image: url('/imagenes/izzi.png');")
+          // Detalles del servicio IZZI
           .service-details
             h3 IZZI
             p Número de convenio 001294350

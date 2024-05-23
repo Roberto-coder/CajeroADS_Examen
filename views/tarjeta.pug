@@ -1,20 +1,33 @@
+// Extiende el layout principal
 extends layout
 
+// Define el bloque de contenido específico para esta plantilla
 block content
+  // Row de Bootstrap con contenido centrado
   .row.justify-content-center
+    // Columna de Bootstrap con ancho medio en dispositivos medianos
     .col-md-6
+      // Tarjeta de Bootstrap
       .card
+        // Cuerpo de la tarjeta
         .card-body
+          // Botón para volver al inicio
           a.btn.btn-danger.flex-fill.mb-2(href='/index') Inicio
+          // Título del contenido centrado
           h3.text-center Pagar crédito
+          // Mostrar el crédito del usuario
           p.display-4.text-center $#{user.credito}
           
+          // Formulario para pagar el crédito
           form(action='/pagartarjeta' method='post')
+            // Grupo de formulario para la cantidad a pagar
             .form-group
                 label(for='username') Cantidad
                 input.form-control(type='text' id='username' name='cantidad' required)
+            // Grupo de formulario para el concepto (en este caso, fijo: Pagar crédito)
             .form-group
                 label(for='passwordtext') Concepto
                 input.form-control(type='text' id='concepto' name='concepto' value='Pagar crédito' readonly)
+            // Botón para enviar el formulario
             .form-group
                 button.btn.btn-danger.btn-block(type='submit') Depositar
